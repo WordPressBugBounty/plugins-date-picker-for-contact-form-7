@@ -76,11 +76,8 @@ class GMDPCF_Backend {
 
 	public function GMWPLW_scripts()
 	{
-		$gmdpcf_skin = 'base';
-		wp_enqueue_style('gmdpcf-jquery-ui-admin', GMDPCF_PLUGIN_URL . '/assents/jquery-ui-themes/themes/'.$gmdpcf_skin.'/jquery-ui.css', array(), '1.0.0', 'all');
-
-		wp_enqueue_style('gmdpcf-jquery-ui-theme-admin', GMDPCF_PLUGIN_URL . '/assents/jquery-ui-themes/themes/'.$gmdpcf_skin.'/theme.css', array(), '1.0.0', 'all');
-		wp_enqueue_script('gmwplw-script-admin', GMDPCF_PLUGIN_URL . 'assents/js/admin-script.js', array('jquery-ui-datepicker'), '1.0.0', true );
+		
+		wp_enqueue_script('gmwplw-script-admin', GMDPCF_PLUGIN_URL . 'assents/js/admin-script.js', array(), '1.0.0', true );
 	}
 	
 	

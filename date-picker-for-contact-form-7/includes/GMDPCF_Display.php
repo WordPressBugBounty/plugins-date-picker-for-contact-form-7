@@ -240,7 +240,28 @@ class GMDPCF_Display {
 								<a href="https://www.codesmade.com/store/product-enquiry-for-woocommerce-pro/" target="_blank" >Get Pro Version for this feature</a>
 							</td>
 						</tr>
-						
+						<tr>
+							<th scope="row">
+								<label><?php echo esc_html( __( 'Disable Dates', 'contact-form-7' ) ); ?></label>
+							</th>
+							<td>
+								<input disabled type="text" name="disable_date" class="formatvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-format' ); ?>" placeholder="<?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?>"/><br/>
+								<code>Example: <?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?></code>
+								<br>
+								<a href="https://www.codesmade.com/store/product-enquiry-for-woocommerce-pro/" target="_blank" >Get Pro Version for this feature</a>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label><?php echo esc_html( __( 'Active Dates', 'contact-form-7' ) ); ?></label>
+							</th>
+							<td>
+								<input disabled type="text" name="active_date" class="formatvalue oneline option" id="<?php echo esc_attr( $args['content'] . '-format' ); ?>" placeholder="<?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?>"/><br/>
+								<code>Example: <?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?></code>
+								<br>
+								<a href="https://www.codesmade.com/store/product-enquiry-for-woocommerce-pro/" target="_blank" >Get Pro Version for this feature</a>
+							</td>
+						</tr>
 						
 					</tbody>
 				</table>

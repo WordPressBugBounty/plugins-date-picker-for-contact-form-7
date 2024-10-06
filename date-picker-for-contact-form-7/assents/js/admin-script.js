@@ -1,8 +1,6 @@
 jQuery( document ).ready(function() {
     
-    jQuery('.min_set_date').datepicker({
-        dateFormat: "yy-mm-dd"
-    });
+    
     jQuery('body').on('change', '.min_type', function() {
         change_minval();
     });
@@ -67,9 +65,7 @@ jQuery( document ).ready(function() {
         jQuery('.min_val').trigger("change");
     }
 
-    jQuery('.max_set_date').datepicker({
-        dateFormat: "yy-mm-dd"
-    });
+    
     jQuery('body').on('change', '.max_type', function() {
         change_maxval();
     });
