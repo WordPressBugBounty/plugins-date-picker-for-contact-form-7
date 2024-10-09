@@ -1,5 +1,5 @@
 === Date Picker For Contact Form 7 ===
-Tested up to: 6.3
+Tested up to: 6.6.2
 Stable tag: 1.0
 Tags: Date picker, Contact form 7
 License: GPLv2 or later
