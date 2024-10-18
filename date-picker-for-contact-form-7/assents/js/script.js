@@ -11,7 +11,8 @@ jQuery( document ).ready(function() {
             var min_val_arr = min_val.split("|");
             console.log(min_val_arr);
             if(min_val_arr[0]=="set_date"){
-                configdat.minDate = min_val_arr[1];
+                var date_min_val_arr = min_val_arr[1].split("-");
+                configdat.minDate = new Date(date_min_val_arr[0], date_min_val_arr[1]-1, date_min_val_arr[2]);
             }
             if(min_val_arr[0]=="current"){
                 if(min_val_arr[3]=='days'){
@@ -48,7 +49,8 @@ jQuery( document ).ready(function() {
             var max_val_arr = max_val.split("|");
             console.log(max_val_arr);
             if(max_val_arr[0]=="set_date"){
-                configdat.maxDate = max_val_arr[1];
+                var date_max_val_arr = max_val_arr[1].split("-");
+                configdat.maxDate = new Date(date_max_val_arr[0], date_max_val_arr[1]-1, date_max_val_arr[2]);
             }
             if(max_val_arr[0]=="current"){
                 if(max_val_arr[3]=='days'){
