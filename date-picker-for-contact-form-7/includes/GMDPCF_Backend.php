@@ -31,7 +31,7 @@ class GMDPCF_Backend {
 
         $gmdpcf_skin_arr = array('base','black-tie','blitzer','cupertino','dark-hive','dot-luv','eggplant','excite-bike','flick','hot-sneaks','humanity','le-frog','mint-choc','overcast','pepper-grinder','redmond','smoothness','south-street','start','sunny','swanky-purse','trontastic','ui-darkness','ui-lightness','vader');
         $gmdpcf_skin = get_option( 'gmdpcf_skin' );
-?>
+		?>
 		<div class="wrap">
 			<h1>Date Picker Option</h1>
 			<form method="post" action="options.php">
@@ -63,23 +63,20 @@ class GMDPCF_Backend {
 			
 			</form>
 		</div>
-<?php
+	<?php
 	}
 	
 	public function GMDPCF_cf7_address_autocomplete_display_gpa_fields()
 	{
-		
-			
-			register_setting('gmdpcf_section', 'gmdpcf_skin');
-	  
+		register_setting('gmdpcf_section', 'gmdpcf_skin');
 	}
 
 	public function GMWPLW_scripts()
 	{
 		
 		wp_enqueue_script('gmwplw-script-admin', GMDPCF_PLUGIN_URL . 'assents/js/admin-script.js', array(), '1.0.0', true );
+		wp_enqueue_style('gmdpcf-style-admin', GMDPCF_PLUGIN_URL . '/assents/css/admin-style.css', array(), '1.0.0', 'all');
 	}
 	
 	
 }
-?>

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Date Picker For Contact Form 7
-description: Google Map for contact form 7 show as field
+description: Date Picker For Contact Form 7 able to make datepicker field in contact field multiple datepicker option
 Version: 1.0
 Author: Gravity Master
 License: GPL2
