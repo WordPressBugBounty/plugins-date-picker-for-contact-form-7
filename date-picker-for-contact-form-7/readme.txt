@@ -1,5 +1,5 @@
 === Date Picker For Contact Form 7 ===
-Tested up to: 6.6.2
+Tested up to: 6.9
 Stable tag: 1.0
 Tags: Date picker, Contact form 7
 License: GPLv2 or later
@@ -8,6 +8,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 == Description ==
 
 **Date Picker For Contact Form 7** able to make datepicker field in contact field multiple datepicker option.
+
+Easily restrict selectable dates in Contact Form 7 forms with custom rules for minimum, maximum, or specific available dates. Improve form accuracy and scheduling control.
 
 A Date Picker for Contact Form 7 is an add-on that allows you to add a calendar widget to your Contact Form 7. This widget helps users pick a date quickly and easily by selecting a day, month, and year from a drop-down calendar. The date picker is especially useful for booking appointments, scheduling events, or any other form where a date is required.
 
