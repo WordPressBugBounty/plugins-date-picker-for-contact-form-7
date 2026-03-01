@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
 * This class is loaded on the front-end since its main job is
 * to display the WhatsApp box.
@@ -93,7 +94,7 @@ class GMDPCF_Display {
         ?>
         <span  class="wpcf7-form-control-wrap <?php echo sanitize_html_class( $tag->name )?>" data-name="<?php echo sanitize_html_class( $tag->name )?>">
         	<input <?php echo $atts;?> />
-        	<?php echo $validation_error;?>
+        	<?php echo wp_kses_post( $validation_error );?>
 		</span >
         <?php
         $html = ob_get_clean();
@@ -102,7 +103,7 @@ class GMDPCF_Display {
 	public function GMDPCF_add_products_tag_generator_menu()
 	{
 		$tag_generator = WPCF7_TagGenerator::get_instance();
-		$tag_generator->add( 'datepicker', __( 'Date Picker', 'gmdpcf' ),array($this, 'GMDPCF_wpcf7_tag_products_generator_menu'),array('version'=>2) );
+		$tag_generator->add( 'datepicker', __( 'Date Picker', 'date-picker-for-contact-form-7' ),array($this, 'GMDPCF_wpcf7_tag_products_generator_menu'),array('version'=>2) );
 	}
 	function GMDPCF_wpcf7_tag_products_generator_menu( $contact_form, $args = '' ) {
 		$args = wp_parse_args( $args, array() );
@@ -111,11 +112,12 @@ class GMDPCF_Display {
 		?>
 		<header class="description-box">
 			<h3>datepicker form tag generator</h3>
+			<p> <a href="https://www.codesmade.com/date-picker-for-contact-form-7-documentation/" target="_blank">Documentation</a> | <a href="https://www.codesmade.com/contact-us/" target="_blank">Support</a></p>
 		</header> 
 		<div class="control-box">
 			
 			<fieldset>
-				<legend><?php echo esc_html( __( 'Field type', 'contact-form-7' ) ); ?></legend>
+				<legend><?php echo esc_html( __( 'Field type', 'date-picker-for-contact-form-7' ) ); ?></legend>
 				<input type="hidden" data-tag-part="basetype" value="datepicker" >
 				<label>
 				<input type="checkbox" data-tag-part="type-suffix" value="*">This is a required field.
@@ -156,10 +158,10 @@ class GMDPCF_Display {
 						<option value="set_date">Set Date</option>
 						<option value="field_name">Linked Field Name</option>
 					</select>
-					<div class="min_set_date_upper" style="display: none;">
-						<input type="text" name="min_set_date" class="min_set_date"  id="<?php echo esc_attr( $args['content'] . '-min_set_date' ); ?>" /><code>Example: <?php echo date('Y-m-d');?></code>
+					<div class="min_set_date_upper gmdpcf-hidden">
+						<input type="text" name="min_set_date" class="min_set_date"  id="<?php echo esc_attr( $args['content'] . '-min_set_date' ); ?>" /><code>Example: <?php echo esc_html( gmdate('Y-m-d') );?></code>
 					</div>
-					<div class="min_current_upper" style="display: none;">
+					<div class="min_current_upper gmdpcf-hidden">
 						<select class="min_current_type">
 							<option value="plus">+</option>
 							<option value="minus">-</option>
@@ -172,7 +174,7 @@ class GMDPCF_Display {
 							<option value="year">Years</option>
 						</select>
 					</div>
-					<div class="min_field_name_upper" style="display: none;">
+					<div class="min_field_name_upper gmdpcf-hidden">
 						<input type="text" name="min_field_name" class="min_field_name"  id="<?php echo esc_attr( $args['content'] . '-min_field_name' ); ?>" /><code>Example: datepicker-1</code>
 					</div>
 					<input type="hidden" data-tag-part="option" data-tag-option="min_val:" class="min_val">
@@ -187,10 +189,10 @@ class GMDPCF_Display {
 						<option value="set_date">Set Date</option>
 						<option value="field_name">Linked Field Name</option>
 					</select>
-					<div class="max_set_date_upper" style="display: none;">
-						<input type="text" name="max_set_date" class="max_set_date"  id="<?php echo esc_attr( $args['content'] . '-max_set_date' ); ?>" /><code>Example: <?php echo date('Y-m-d');?></code>
+					<div class="max_set_date_upper gmdpcf-hidden">
+						<input type="text" name="max_set_date" class="max_set_date"  id="<?php echo esc_attr( $args['content'] . '-max_set_date' ); ?>" /><code>Example: <?php echo esc_html( gmdate('Y-m-d') );?></code>
 					</div>
-					<div class="max_current_upper" style="display: none;">
+					<div class="max_current_upper gmdpcf-hidden">
 						<select class="max_current_type">
 							<option value="plus">+</option>
 							<option value="minus">-</option>
@@ -203,7 +205,7 @@ class GMDPCF_Display {
 							<option value="year">Years</option>
 						</select>
 					</div>
-					<div class="max_field_name_upper" style="display: none;">
+					<div class="max_field_name_upper gmdpcf-hidden">
 						<input type="text" name="max_field_name" class="max_field_name"  id="<?php echo esc_attr( $args['content'] . '-max_field_name' ); ?>" /><code>Example: datepicker-1</code>
 					</div>
 					<input type="hidden" data-tag-part="option" data-tag-option="max_val:"  name="max_val" class="max_val" />
@@ -215,27 +217,27 @@ class GMDPCF_Display {
 				<div>
 					<label>
 						<input type="checkbox"  data-tag-part="option" data-tag-option="disable_weekdays:sunday" disabled /> 
-						<?php echo esc_html( __( 'sunday', 'contact-form-7' ) ); ?>
+						<?php echo esc_html( __( 'sunday', 'date-picker-for-contact-form-7' ) ); ?>
 					</label>
 					<label>
 						<input type="checkbox"  data-tag-part="option" data-tag-option="disable_weekdays:monday" disabled /> 
-						<?php echo esc_html( __( 'monday', 'contact-form-7' ) ); ?>
+						<?php echo esc_html( __( 'monday', 'date-picker-for-contact-form-7' ) ); ?>
 					</label>
 					<label>
 						<input type="checkbox"  data-tag-part="option" data-tag-option="disable_weekdays:tuesday" disabled /> 
-						<?php echo esc_html( __( 'tuesday', 'contact-form-7' ) ); ?>
+						<?php echo esc_html( __( 'tuesday', 'date-picker-for-contact-form-7' ) ); ?>
 					</label>
 					<label>
 						<input type="checkbox"  data-tag-part="option" data-tag-option="disable_weekdays:thursday" disabled /> 
-						<?php echo esc_html( __( 'thursday', 'contact-form-7' ) ); ?>
+						<?php echo esc_html( __( 'thursday', 'date-picker-for-contact-form-7' ) ); ?>
 					</label>
 					<label>
 						<input type="checkbox"  data-tag-part="option" data-tag-option="disable_weekdays:friday" disabled /> 
-						<?php echo esc_html( __( 'friday', 'contact-form-7' ) ); ?>
+						<?php echo esc_html( __( 'friday', 'date-picker-for-contact-form-7' ) ); ?>
 					</label>
 					<label>
 						<input type="checkbox"  data-tag-part="option" data-tag-option="disable_weekdays:saturday" disabled /> 
-						<?php echo esc_html( __( 'saturday', 'contact-form-7' ) ); ?>
+						<?php echo esc_html( __( 'saturday', 'date-picker-for-contact-form-7' ) ); ?>
 					</label>
 					<br/>
 					<a href="https://www.codesmade.com/store/date-picker-for-contact-form-7-pro/" target="_blank" >Get Pro Version for this feature</a>
@@ -246,17 +248,17 @@ class GMDPCF_Display {
 			<fieldset>
 				<legend>Disable Dates</legend>
 
-				<input type="text" data-tag-part="option" data-tag-option="disable_date:" placeholder="<?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?>" disabled>
-				<code>Example: <?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?></code>
+				<input type="text" data-tag-part="option" data-tag-option="disable_date:" placeholder="<?php echo esc_attr( gmdate('Y-m-d') );?>|<?php echo esc_attr( gmdate('Y-m-d'));?>" disabled>
+				<code>Example: <?php echo esc_html( gmdate('Y-m-d') );?>|<?php echo esc_html( gmdate('Y-m-d') );?></code>
 				<br>
 				<a href="https://www.codesmade.com/store/date-picker-for-contact-form-7-pro/" target="_blank" >Get Pro Version for this feature</a>
 			</fieldset>
 			<fieldset>
 				<legend>Active Dates</legend>
-				<input type="text" data-tag-part="option" data-tag-option="active_date:" placeholder="<?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?>" disabled>
-				<code>Example: <?php echo date('Y-m-d');?>|<?php echo date('Y-m-d');?></code>
-								<br>
-								<a href="https://www.codesmade.com/store/date-picker-for-contact-form-7-pro/" target="_blank" >Get Pro Version for this feature</a>
+				<input type="text" data-tag-part="option" data-tag-option="active_date:" placeholder="<?php echo esc_attr( gmdate('Y-m-d') );?>|<?php echo esc_attr( gmdate('Y-m-d'));?>" disabled>
+				<code>Example: <?php echo esc_html( gmdate('Y-m-d') );?>|<?php echo esc_html( gmdate('Y-m-d') );?></code>
+						<br>
+						<a href="https://www.codesmade.com/store/date-picker-for-contact-form-7-pro/" target="_blank" >Get Pro Version for this feature</a>
 			</fieldset>
 		</div>
 		<div class="insert-box">
@@ -265,11 +267,7 @@ class GMDPCF_Display {
 				<div class="submitbox">
 					<input type="button" class="button button-primary insert-tag" value="Insert Tag" />
 				</div>
-	    	</div/>
-			<p class="mail-tag-tip">
-				<label for="<?php echo esc_attr( $args['content'] . '-mailtag' ); ?>"><?php echo sprintf( esc_html( __( "To use the value input through this field in a mail field, you need to insert the corresponding mail-tag (%s) into the field on the Mail tab.", 'calculation-for-contact-form-7' ) ), '<strong><span class="mail-tag"></span></strong>' ); ?>
-			    </label>
-			</p>
+			</div/>
 		</div>
 		<?php
 	}

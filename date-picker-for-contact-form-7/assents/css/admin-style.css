@@ -7,3 +7,8 @@
 .min_current_upper .min_current_type,.min_current_upper .min_current_days{
 	width: auto !important;
 }
+
+/* Utility class to hide elements previously using inline display:none */
+.gmdpcf-hidden{
+    display: none;
+}

@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * This class is loaded on the front-end since its main job is 
  * to display the WhatsApp box.

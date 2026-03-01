@@ -2,9 +2,10 @@
 /*
 Plugin Name: Date Picker For Contact Form 7
 description: Date Picker For Contact Form 7 able to make datepicker field in contact field multiple datepicker option
-Version: 1.0
-Author: Gravity Master
+Version: 2.0
+Author: theme funda
 License: GPL2
+Requires Plugins: contact-form-7
 */
 
 /* Stop immediately if accessed directly. */
@@ -50,4 +51,19 @@ if ( ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) ) {
    new GMDPCF_Backend();
    new GMDPCF_Display();
    new GMDPCF_Frontend();
+}
+
+/* Add Support and Docs links next to plugin action links on the Plugins page. */
+add_filter( 'plugin_action_links_' . GMDPCF_PLUGIN_BASENAME, 'gmdpcf_plugin_action_links' );
+function gmdpcf_plugin_action_links( $links ) {
+   $support_url = 'https://www.codesmade.com/contact-us/';
+   $docs_url    = 'https://www.codesmade.com/date-picker-for-contact-form-7-documentation/';
+
+   $support_link = '<a href="' . esc_url( $support_url ) . '" target="_blank" rel="noopener">Support</a>';
+   $docs_link    = '<a href="' . esc_url( $docs_url ) . '" target="_blank" rel="noopener">Docs</a>';
+
+   array_unshift( $links, $support_link );
+   array_unshift( $links, $docs_link );
+
+   return $links;
 }

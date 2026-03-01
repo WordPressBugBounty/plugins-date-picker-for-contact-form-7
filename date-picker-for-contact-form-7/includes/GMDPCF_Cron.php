@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class GMDPCF_Cron {
 	
 	public function __construct () {

@@ -1,55 +1,71 @@
 === Date Picker For Contact Form 7 ===
+Contributors: theme funda
+Tags: date picker, contact form 7, cf7, wpcf7, booking calendar
+Requires at least: 5.0
 Tested up to: 6.9
 Stable tag: 1.0
-Tags: Date picker, Contact form 7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
+Easily add a customizable Date Picker to Contact Form 7. Restrict dates, disable specific days, and improve your booking forms.
+
 == Description ==
 
-**Date Picker For Contact Form 7** able to make datepicker field in contact field multiple datepicker option.
+**Date Picker For Contact Form 7** is a powerful add-on that integrates a flexible calendar widget into your CF7 forms. Say goodbye to manual date entry errors and provide your users with a sleek, mobile-friendly interface for selecting dates.
 
-Easily restrict selectable dates in Contact Form 7 forms with custom rules for minimum, maximum, or specific available dates. Improve form accuracy and scheduling control.
+Whether you are setting up an **Arrival/Departure** system, a **Check-in/Check-out** flow, or a simple **Appointment Booking** form, this plugin gives you full control over how dates are selected.
 
-A Date Picker for Contact Form 7 is an add-on that allows you to add a calendar widget to your Contact Form 7. This widget helps users pick a date quickly and easily by selecting a day, month, and year from a drop-down calendar. The date picker is especially useful for booking appointments, scheduling events, or any other form where a date is required.
+### Why choose this Date Picker?
+* **User Experience:** Faster date selection leads to higher form conversion rates.
+* **Data Accuracy:** Forces a consistent date format, making data management easy.
+* **Scheduling Control:** Perfect for businesses that need to restrict weekends, holidays, or past dates.
 
-[Get Primum ](https://www.codesmade.com/store/date-picker-for-contact-form-7-pro/) | [Support](https://www.codesmade.com/contact-us/) | [Documentation](https://www.codesmade.com/date-picker-for-contact-form-7-documentation/)
+### Main Features
+* **Multiple Date Pickers:** Add multiple unique date fields to a single form.
+* **Custom Date Formats:** Choose how the date appears (e.g., dd/mm/yy, mm-dd-yy).
+* **Min/Max Date Restrictions:** Prevent users from picking dates in the past or too far in the future.
+* **Custom Skins:** Change the design and look of the calendar to match your site.
+* **Placeholder Support:** Add custom placeholder text inside the date field.
 
-ex. If you want setup Arrival date - Departure date , Check in - Checkout Date or Single individual Date that you can be
+### [Pro] Advanced Features
+* **Disable Specific Days:** Blackout holidays, weekends, or specific dates where you are unavailable.
+* **Advanced Logic:** Perfect for complex booking requirements.
 
-<h3>Features</h3>
+[Get Premium](https://www.codesmade.com/store/date-picker-for-contact-form-7-pro/) | [Support](https://www.codesmade.com/contact-us/) | [Documentation](https://www.codesmade.com/date-picker-for-contact-form-7-documentation/)
 
-<ul>
-<li>Change Skin (Design of datepicker)</li>
-<li>Customize Date Format</li>
-<li>Minimum Date Option </li>
-<li>Maximum Date Option </li>
-<li>Disable Specific Days </li>
-<li>Placeholder</li>
-</ul>
+== Installation ==
 
-<h3>Premium Features</h3>
+1. Upload the `date-picker-for-contact-form-7` folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Open your **Contact Form 7** editor.
+4. Look for the "Date Picker" tag generator button.
+5. Configure your settings (Min/Max date, Skin, etc.) and insert the shortcode.
 
-<ul>
-<li>Disable Specific Days </li>
-</ul>
+== Frequently Asked Questions ==
 
-<h3>Why use a Date Picker for Contact Form 7?</h3>
+= Does this work with the latest version of Contact Form 7? =
+Yes, we regularly test the plugin against the latest CF7 updates to ensure 100% compatibility.
 
-There are several reasons why you should consider using a date picker in your Contact Form 7. Firstly, it makes it easier for users to select a date, which can improve the user experience. Secondly, it eliminates the possibility of incorrect date formatting, which can cause issues when sorting or organizing data. Finally, a date picker can save time and reduce errors for users by limiting the need for manual data entry.
+= Can I have two date pickers for "Check-in" and "Check-out"? =
+Absolutely. You can add multiple fields and set different rules for each.
 
-Adding a Date Picker for Contact Form 7 is a simple way to improve the user experience on your website. By allowing users to select a date quickly and efficiently, you can save time, reduce errors, and increase user satisfaction. With the steps outlined in this article, you can easily add a Date Picker to your Contact Form 7 and customize it to meet your specific needs.
+= Is it mobile-friendly? =
+Yes, the date picker is responsive and works smoothly on touch devices.
 
-<h4>Our More Plugins</h4>
+== Screenshots ==
 
-[Date Picker for Gravity Form](https://wordpress.org/plugins/date-picker-for-gravity-form/) plugin allows users to select dates easily, improving form usability and accuracy.
+1. The Date Picker tag generator interface in Contact Form 7.
+2. Example of a front-end date picker with a custom skin.
+3. Settings panel for restricting minimum and maximum dates.
 
-[Pixel Manager for Contact Form 7](https://wordpress.org/plugins/pixel-manager-for-contact-form-7/) This plugin integrates seamlessly, allowing you to add tracking pixels to your forms for precise analytics.
+== Changelog ==
 
-[Map Field For Contact Form 7](https://wordpress.org/plugins/map-field-for-contact-form-7/) Users can select locations easily, enhancing user engagement and data accuracy.
+= 1.0 =
+* Initial release.
+* Added Min/Max date options.
+* Added custom skin support.
 
-[Digital Signature for Wpforms](https://wordpress.org/plugins/digital-signature-for-wpforms/) allowing users to sign forms electronically. This plugin ensures secure and legally binding signatures, improving the professionalism of your forms.
+== Upgrade Notice ==
 
-[Autocomplete Location field Contact Form 7](https://wordpress.org/plugins/autocomplete-location-field-contact-form-7/) This plugin allows users to easily search and select locations, improving user experience and accuracy. 
-
-[Date Picker For Contact Form 7](https://wordpress.org/plugins/date-picker-for-contact-form-7/) It simplifies date selection, enhancing user experience and ensuring accurate submissions.
+= 1.0 =
+Initial version launch. Enjoy the best date picker for CF7!

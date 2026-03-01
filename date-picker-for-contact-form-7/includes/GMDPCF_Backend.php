@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
 * This class is loaded on the front-end since its main job is
 * to display the WhatsApp box.
@@ -14,8 +15,8 @@ class GMDPCF_Backend {
 	{
 		add_submenu_page(
 											'wpcf7',
-											__('Date Picker Option','contact-form-7'),
-											__('Date Picker Option','contact-form-7'), 
+											__('Date Picker Option','date-picker-for-contact-form-7'),
+											__('Date Picker Option','date-picker-for-contact-form-7'), 
 											'manage_options',
 											'date-picker-cf7op',
 											array($this, 'GMDPCF_cf7_google_place_admin' ),
@@ -68,14 +69,21 @@ class GMDPCF_Backend {
 	
 	public function GMDPCF_cf7_address_autocomplete_display_gpa_fields()
 	{
-		register_setting('gmdpcf_section', 'gmdpcf_skin');
+		register_setting(
+			'gmdpcf_section',
+			'gmdpcf_skin',
+			array(
+				'type'              => 'string',
+				'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
 	}
 
 	public function GMWPLW_scripts()
 	{
 		
-		wp_enqueue_script('gmwplw-script-admin', GMDPCF_PLUGIN_URL . 'assents/js/admin-script.js', array(), '1.0.0', true );
-		wp_enqueue_style('gmdpcf-style-admin', GMDPCF_PLUGIN_URL . '/assents/css/admin-style.css', array(), '1.0.0', 'all');
+		wp_enqueue_script('gmwplw-script-admin', GMDPCF_PLUGIN_URL . 'assents/js/admin-script.js', array(), '1.1.0', true );
+		wp_enqueue_style('gmdpcf-style-admin', GMDPCF_PLUGIN_URL . '/assents/css/admin-style.css', array(), '1.1.0', 'all');
 	}
 	
 	
